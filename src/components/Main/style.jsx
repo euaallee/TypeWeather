@@ -8,7 +8,6 @@ export const Main = styled.div`
     gap: 5.6rem;
 `
 export const TextWrapper = styled.div`
-
 `
 export const H1 = styled.h1`
     align-self: stretch;
@@ -46,7 +45,6 @@ export const InputWrapper = styled.div`
     align-self: stretch;
 
     input {
-        flex: 1;
         height: 5.6rem;
         padding: 0rem 2rem;
         justify-content: center;
