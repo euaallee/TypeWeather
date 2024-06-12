@@ -29,6 +29,16 @@ app.get('/api/states/:countryCode', async (req, res) => {
     }
 })
 
+app.get('/api/weather/', async (req, res) => {
+    try {
+        const response = await axios.get(`https://api.hgbrasil.com/weather/`)
+        const climate = response.data
+        console.log(climate)
+    } catch (error) {
+        res.status(500).send(`Error fetching climate`)
+    }
+})
+
 app.listen(PORT, () => {
     console.log(`Server running on port ${PORT}`)
 })
