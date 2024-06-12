@@ -1,6 +1,5 @@
 import React from 'react'
 import * as C from './style'
-import AutocompleteComponent from '../Autocomplete'
 
 export default function Main({ City, change }) {
     return (
@@ -12,7 +11,6 @@ export default function Main({ City, change }) {
             <C.InputWrapper>
                 <input type="text" placeholder='Buscar local' value={City} onChange={change} />
             </C.InputWrapper>
-            <AutocompleteComponent />
         </C.Main>
     )
 }
