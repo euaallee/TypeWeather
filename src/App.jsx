@@ -16,15 +16,6 @@ export default function App() {
         } catch (error) {
             console.error("Error fetching weather data:", error)
         }
-
-        // API.get('?key=65926e64&city_name=${city}')
-        // .then((res) => {
-        //     const data = res.data
-        //     setWeather(data)
-        // })
-        // .catch((error) => {
-        //     console.error(error)
-        // })
     }
 
     const handleChange = (event) => {
@@ -37,11 +28,16 @@ export default function App() {
             APIWeather()
         }
     }
-    console.log(weather)
+
     return (
         <>
             <Header />
             <Main City={city} change={handleChange} enter={handleEnter} />
+            {Object.keys(weather).length > 0 && (
+                <div>
+                    <h1 style={{fontSize: '2.4rem', color: '#fff'}}>{weather.city}</h1>
+                </div>
+            )}
         </>
     )
 }
