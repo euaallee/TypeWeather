@@ -1,11 +1,12 @@
 import React, { useState, useEffect } from 'react';
+import { IoMdSend } from 'react-icons/io';
 import logo2 from '/images/Logo2.svg';
 import * as WM from '../../utils/weatherMoment';
 import * as CD from '../../utils/condition';
 import * as Type from '../../utils/type';
 import * as C from './style';
 
-export default function Result({ city, currently, description, forecast, dayWeek, date, hours, temp, rain, humidity, windSpeedy, conditionSlug }) {
+export default function Result({ city, currently, description, forecast, dayWeek, date, hours, temp, rain, humidity, windSpeedy, conditionSlug, City, change, enter, click }) {
   const [bg, setBg] = useState(null);
   const [states, setStates] = useState(null);
 
@@ -51,7 +52,21 @@ export default function Result({ city, currently, description, forecast, dayWeek
             <img src={logo2} alt="Logo 2" />
           </C.Home>
           <C.InputSearch>
-            <input placeholder='Buscar local' type="text" name="searchLocal" id="searchLocal" />
+            <input
+              disabled={false}
+              type="text"
+              placeholder='Buscar local'
+              value={City}
+              onChange={change}
+              onKeyDownCapture={enter}
+            />
+            <button
+              onClick={click}>
+              <IoMdSend
+                size={32}
+                color="#FFF"
+              />
+            </button>
           </C.InputSearch>
         </C.Wrapper>
         <C.Display img={bg}>
@@ -85,7 +100,7 @@ export default function Result({ city, currently, description, forecast, dayWeek
               <img src={Type.thermometerSimpleLight.type} alt="Thermometer" />
               <p>Sensação térmica</p>
             </C.TitleDetailItem>
-            <p>{}<span>°c</span></p>
+            <p>{temp}<span>°c</span></p>
           </C.WeatherDetailItem>
           <C.WeatherDetailItem>
             <C.TitleDetailItem>
@@ -113,7 +128,7 @@ export default function Result({ city, currently, description, forecast, dayWeek
               <img src={Type.sunDimLight.type} alt="Sun" />
               <p>Índice UV</p>
             </C.TitleDetailItem>
-            <p>{}<span></span></p>
+            <p>{rain}<span></span></p>
           </C.WeatherDetailItem>
         </C.WeatherDetail>
         <C.NextDays>

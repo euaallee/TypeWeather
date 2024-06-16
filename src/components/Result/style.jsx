@@ -10,6 +10,10 @@ export const Dash = styled.div`
   align-items: center;
   background: #13131A;
   position: absolute;
+
+  @media (width <= 770px) {
+    flex-direction: column;
+  }
 `
 export const Card = styled.div`
   display: flex;
@@ -21,6 +25,11 @@ export const Card = styled.div`
   gap: 1.6rem;
   border-radius: 1.2rem;
   background: #16161F;
+
+  @media (width <= 770px) {
+    width: 100%;
+    height: 100vh;
+  }
 `
 export const Wrapper = styled.div`
   display: flex;
@@ -72,6 +81,19 @@ export const InputSearch = styled.div`
         font-style: normal;
         font-weight: 400;
         line-height: 140%;
+    }
+
+    button {
+        height: 5.6rem;
+        width: 5.6rem;
+        border-radius: 0 .8rem .8rem 0;
+        border: none;
+        background-color: #8FB2F5;
+        cursor: pointer;
+        transition: all .2s ease-in-out;
+        &:hover {
+            background-color: #6a9bf5;
+        }
     }
 `
 export const Display = styled.div`

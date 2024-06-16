@@ -1,8 +1,9 @@
+import { IoMdSend } from "react-icons/io";
 import React from 'react'
 import * as C from './style'
 import Search from '../Search'
 
-export default function Main({ City, change, enter }) {
+export default function Main({ City, change, enter, click, disabled}) {
     return (
         <C.Main>
             <C.TextWrapper>
@@ -12,13 +13,20 @@ export default function Main({ City, change, enter }) {
             <C.GroupSearch>
                 <C.InputWrapper>
                     <input
-                        disabled={false}
+                        disabled={disabled}
                         type="text"
                         placeholder='Buscar local'
                         value={City}
                         onChange={change}
                         onKeyDownCapture={enter}
                     />
+                    <button
+                        onClick={click}>
+                        <IoMdSend
+                            size={32}
+                            color="#FFF"
+                        />
+                    </button>
                 </C.InputWrapper>
                 {/* <C.NamesCities>
                     <Search

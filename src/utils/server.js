@@ -3,7 +3,7 @@ import axios from "axios"
 import cors from "cors"
 
 const app = e()
-const PORT = process.env.PORT || 5000
+const PORT = process.env.PORT || 3000
 
 app.use(cors())
 
@@ -17,7 +17,7 @@ app.get('/weather', async (req, res) => {
     try {
         const response = await axios.get('https://api.hgbrasil.com/weather/', {
             params: {
-                key: '635d8a03',
+                key: 'aa6b041a',
                 city_name: cityName
             }
         })

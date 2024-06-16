@@ -95,6 +95,19 @@ export const InputWrapper = styled.div`
         line-height: 140%;
     }
 
+    button {
+        height: 5.6rem;
+        width: 5.6rem;
+        border-radius: 0 .8rem .8rem 0;
+        border: none;
+        background-color: #8FB2F5;
+        cursor: pointer;
+        transition: all .2s ease-in-out;
+        &:hover {
+            background-color: #6a9bf5;
+        }
+    }
+
     @media (width <= 600px) {
         width: 100%;
     }
