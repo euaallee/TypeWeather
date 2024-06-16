@@ -72,6 +72,10 @@ export const InputSearch = styled.div`
         &:disabled {
             color: #fafafa84;
         }
+
+        @media (width <= 770px) {
+          width: 100%;
+        }
     }
 
     &::placeholder {
@@ -107,6 +111,10 @@ export const Display = styled.div`
   background: url(${p => p.img}) no-repeat;
   background-size: cover;
   position: relative;
+
+  @media (width <= 600px) {
+    height: 30.4rem;
+  }
 `
 export const DisplatText = styled.div`
   display: flex;
@@ -193,12 +201,30 @@ export const DisplayTemp = styled.div`
       line-height: 140%;
     }
   }
+  @media (width <= 770px) {
+    h2 {
+      font-size: 4.8rem;
+    }
+    
+    span {
+      font-size: 1.4rem;
+      strong{
+        font-size: 1.6rem;
+      }
+    }
+  }
 `
 export const DisplayTempInfo = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
   gap: 1.6rem;
+
+  @media (width <= 770px) {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0rem;
+  }
 `
 export const Divider = styled.div`
   width: .8rem;
@@ -207,6 +233,9 @@ export const Divider = styled.div`
   background-color: #FFF;
   fill: #FFF;
   opacity: 0.4;
+  @media (width <= 770px) {
+    display: none;
+  }
 `
 export const WeatherStates = styled.div`
   background: url(${p => p.img}) no-repeat;
@@ -217,6 +246,11 @@ export const WeatherStates = styled.div`
   position: absolute;
   right: 0;
   bottom: 0;
+
+  @media (width <= 770px) {
+    width: 15rem;
+    height: 15rem;
+  }
 `
 export const CardDetail = styled.div`
   width: 100%;
@@ -315,13 +349,18 @@ export const NextDays = styled.div`
     font-weight: 400;
     line-height: 140%;
   }
+
+  @media (width <= 770px) {
+    margin-bottom: 5rem;
+    
+  }
 `
 export const Forecast = styled.div`
   display: flex;
   width: 100%;
   align-items: center;
   justify-content: space-between;
-  overflow: hidden;
+  overflow: scroll;
 `
 export const Day = styled.div`
   display: flex;
