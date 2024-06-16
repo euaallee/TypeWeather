@@ -6,6 +6,10 @@ export const Main = styled.div`
     flex-direction: column;
     align-items: center;
     gap: 5.6rem;
+
+    @media (width <= 600px) {
+        width: 100vw;
+    }
 `
 export const TextWrapper = styled.div` 
 `
@@ -19,6 +23,10 @@ export const H1 = styled.h1`
     font-weight: 700;
     line-height: 140%;
     margin-bottom: .8rem;
+
+    @media (width <= 600px) {
+        font-size: 2.4rem;
+    }
 `
 export const Strong = styled.strong`
     color: #8FB2F5;
@@ -39,10 +47,10 @@ export const P = styled.p`
     line-height: 140%;
 `
 export const GroupSearch = styled.div`
-    display: flex;
-    flex-direction: column;
     width: 100%;
-    gap: .8rem;
+    @media (width <= 600px) {
+        width: 80%;
+    }
 `
 export const NamesCities = styled.div`
     display: flex;
@@ -85,5 +93,9 @@ export const InputWrapper = styled.div`
         font-style: normal;
         font-weight: 400;
         line-height: 140%;
+    }
+
+    @media (width <= 600px) {
+        width: 100%;
     }
 `

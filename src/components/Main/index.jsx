@@ -20,7 +20,7 @@ export default function Main({ City, change, enter }) {
                         onKeyDownCapture={enter}
                     />
                 </C.InputWrapper>
-                <C.NamesCities>
+                {/* <C.NamesCities>
                     <Search
                         NameCity={"Petrolina, PE - Brasil"}
                     />
@@ -30,7 +30,7 @@ export default function Main({ City, change, enter }) {
                     <Search
                         NameCity={"Morro de São Paulo, BA - Brasil"}
                     />
-                </C.NamesCities>
+                </C.NamesCities> */}
             </C.GroupSearch>
         </C.Main>
     )

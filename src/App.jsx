@@ -1,13 +1,12 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react'
 import Header from './components/Header'
 import Main from './components/Main'
-// import API from './utils/server'
+import Result from './components/Result'
 import axios from 'axios'
-import { useState, useEffect } from 'react'
 
 export default function App() {
     const [city, setCity] = useState("")
-    const [weather, setWeather] = useState(null)
+    const [weather, setWeather] = useState([])
 
     const APIWeather = async () => {
         try {
@@ -23,8 +22,8 @@ export default function App() {
     }
 
     const handleEnter = (event) => {
-        console.log(event.keyCode)
-        if (event.keyCode == 13) {
+        setWeather([])
+        if (event.key === 'Enter') {
             APIWeather()
         }
     }
@@ -34,9 +33,20 @@ export default function App() {
             <Header />
             <Main City={city} change={handleChange} enter={handleEnter} />
             {Object.keys(weather).length > 0 && (
-                <div>
-                    <h1 style={{fontSize: '2.4rem', color: '#fff'}}>{weather.city}</h1>
-                </div>
+                <Result
+                    city={weather.city}
+                    description={weather.description}
+                    currently={weather.currently}
+                    conditionSlug={weather.condition_slug}
+                    dayWeek={"Sábado"}
+                    hours={weather.time}
+                    temp={weather.temp}
+                    date={weather.date}
+                    humidity={weather.humidity}
+                    rain={weather.rain}
+                    windSpeedy={weather.wind_speedy}
+                    forecast={weather.forecast}
+                />
             )}
         </>
     )

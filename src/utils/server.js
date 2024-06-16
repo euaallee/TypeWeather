@@ -17,7 +17,7 @@ app.get('/weather', async (req, res) => {
     try {
         const response = await axios.get('https://api.hgbrasil.com/weather/', {
             params: {
-                key: '65926e64',
+                key: '635d8a03',
                 city_name: cityName
             }
         })
