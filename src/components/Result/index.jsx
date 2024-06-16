@@ -6,7 +6,7 @@ import * as CD from '../../utils/condition';
 import * as Type from '../../utils/type';
 import * as C from './style';
 
-export default function Result({ city, currently, description, forecast, dayWeek, date, hours, temp, rain, humidity, windSpeedy, conditionSlug, City, change, enter, click }) {
+export default function Result({ city, currently, description, forecast, dayWeek, max, min, date, hours, temp, rain, humidity, windSpeedy, conditionSlug, City, change, enter, click }) {
   const [bg, setBg] = useState(null);
   const [states, setStates] = useState(null);
 
@@ -83,7 +83,7 @@ export default function Result({ city, currently, description, forecast, dayWeek
             <C.DisplayTemp>
               <h2>{temp}°c</h2>
               <C.DisplayTempInfo>
-                <span><strong>32°c / 26°c</strong></span>
+                <span><strong>{max}°c / {min}°c</strong></span>
                 <C.Divider></C.Divider>
                 <span>{description}</span>
               </C.DisplayTempInfo>

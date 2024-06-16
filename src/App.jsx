@@ -48,6 +48,8 @@ export default function App() {
                     currently={weather.currently}
                     conditionSlug={weather.condition_slug}
                     dayWeek={weather.forecast[0].weekday}
+                    max={weather.forecast[0].max}
+                    min={weather.forecast[0].min}
                     hours={weather.time}
                     temp={weather.temp}
                     date={weather.date}
